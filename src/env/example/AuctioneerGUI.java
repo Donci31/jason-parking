@@ -26,7 +26,11 @@ public class AuctioneerGUI extends AgArch {
             try {
                 exit = Integer.parseInt(input.getText());
             } catch(NumberFormatException ex) {
-                exit = 0;
+                exit = -1;
+            }
+
+            if (1 > exit || 8 < exit) {
+                return;
             }
             Literal goal = Literal.parseLiteral("start_auction(" + auctionID++ + "," + exit + ")");
             getTS().getC().addAchvGoal(goal, null);

@@ -1,5 +1,5 @@
-+!start_auction(ID, N)
-    <- .broadcast(tell, auction(ID, N)).
++!start_auction(ID, EXIT)
+    <- .broadcast(tell, auction(ID, EXIT)).
 
 
 @pb1[atomic]
