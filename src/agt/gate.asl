@@ -8,6 +8,6 @@
       .length(L, 4) &
       .max(L, b(B, W)) &
       B > 0
-   <- .print("Winner of auction ", N, " is ", W, " with ", B);
+   <- .print("Winner of exit ", N, " is ", W);
       .send(W, tell, occupied(W));
       .abolish(place_bid(N, _)).
