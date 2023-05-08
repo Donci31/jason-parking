@@ -16,6 +16,7 @@ public class AuctioneerGUI extends AgArch {
     JButton auction;
     JTextField input;
 
+    int auctionID = 0;
     int exit = 0;
 
     public AuctioneerGUI() {
@@ -27,7 +28,7 @@ public class AuctioneerGUI extends AgArch {
             } catch(NumberFormatException ex) {
                 exit = 0;
             }
-            Literal goal = ASSyntax.createLiteral("start_auction", ASSyntax.createNumber(exit));
+            Literal goal = Literal.parseLiteral("start_auction(" + auctionID++ + "," + exit + ")");
             getTS().getC().addAchvGoal(goal, null);
         });
 
