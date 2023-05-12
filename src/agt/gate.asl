@@ -1,3 +1,5 @@
+number_of_park_places(0).
+
 +wants_to_park(EXIT)[source(CAR)]
     <- .print(CAR, " wants to park, wants to exit at ", EXIT, ". Broadcasting auction.");
       .broadcast(tell, auction(EXIT, CAR)).
@@ -15,9 +17,8 @@
       .send(WINNER_BID_FROM, tell, occupied);
       .send(CAR, tell, parked).
 
-number_of_park_places(0).
-
 +spawn_parking_place: number_of_park_places(N)
    <- .print("Number of park places: ", N + 1);
+      .abolish(spawn_parking_place);
       .abolish(number_of_park_places(_));
       +number_of_park_places(N + 1).
