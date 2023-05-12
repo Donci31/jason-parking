@@ -8,6 +8,7 @@
       .length(L, 4) &
       .max(L, b(B, W)) &
       B > 0
-   <- .print("Winner of exit ", C, " is ", W);
+   <- .print(C, " is parked at ", W);
       .send(W, tell, occupied(W));
+      .send(C, tell, parked(W));
       .abolish(place_bid(N, _)).
