@@ -8,4 +8,4 @@
 
 !start.
 +!start
-   <- .broadcast(tell, spawn_parking_place).
+   <- .send(gate, tell, spawn_parking_place).
