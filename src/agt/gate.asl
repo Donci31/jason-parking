@@ -1,13 +1,13 @@
-+start_auction(ID, EXIT)
-    <- .broadcast(tell, auction(ID, EXIT)).
++start_auction(ID, EXIT)[source(C)]
+    <- .broadcast(tell, auction(ID, EXIT, C)).
 
 
 @pb1[atomic]
-+place_bid(N, _)
-   :  .findall(b(B, A), place_bid(N, B)[source(A)], L) &
++place_bid(N, _, C)
+   :  .findall(b(B, A), place_bid(N, B, C)[source(A)], L) &
       .length(L, 4) &
       .max(L, b(B, W)) &
       B > 0
-   <- .print("Winner of exit ", N, " is ", W);
+   <- .print("Winner of exit ", C, " is ", W);
       .send(W, tell, occupied(W));
       .abolish(place_bid(N, _)).
