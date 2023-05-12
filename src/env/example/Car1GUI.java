@@ -10,7 +10,7 @@ import jason.asSyntax.Literal;
 
 import javax.swing.*;
 
-public class AuctioneerGUI extends AgArch {
+public class Car1GUI extends AgArch {
 
     JFrame    f;
     JButton auction;
@@ -19,7 +19,7 @@ public class AuctioneerGUI extends AgArch {
     int auctionID = 0;
     int exit = 0;
 
-    public AuctioneerGUI() {
+    public Car1GUI() {
         auction = new JButton("Start new auction");
         input = new JTextField(1);
         auction.addActionListener(e -> {
@@ -36,17 +36,12 @@ public class AuctioneerGUI extends AgArch {
             getTS().getC().addAchvGoal(goal, null);
         });
 
-        f = new JFrame("Auctioneer agent");
+        f = new JFrame("Car 1 agent");
         f.getContentPane().setLayout(new BorderLayout());
         f.getContentPane().add(BorderLayout.NORTH, input);
         f.getContentPane().add(BorderLayout.CENTER, auction);
         f.pack();
         f.setVisible(true);
-    }
-
-    @Override
-    public void act(ActionExec action) {
-        super.act(action);
     }
 
     @Override

@@ -16,7 +16,11 @@ MAS parking {
             park_place2;
             park_place3;
             park_place4;
-            gate agentArchClass AuctioneerGUI;
+            gate;
+            car1 agentArchClass Car1GUI;
+            car2 agentArchClass Car2GUI;
+            car3 agentArchClass Car3GUI;
+            car4 agentArchClass Car4GUI;
 
     aslSourcePath: "src/agt";
 }

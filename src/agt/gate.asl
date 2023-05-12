@@ -1,4 +1,4 @@
-+!start_auction(ID, EXIT)
++start_auction(ID, EXIT)
     <- .broadcast(tell, auction(ID, EXIT)).
 
 
