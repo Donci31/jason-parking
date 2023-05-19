@@ -12,7 +12,7 @@
 
 MAS parking {
 
-    environment: Env
+    environment: example.Env
 
     agents: gate;
 
