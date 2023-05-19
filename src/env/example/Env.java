@@ -101,11 +101,6 @@ public class Env extends Environment {
             getContentPane().add(BorderLayout.EAST, newCar2);
             pack();
             setVisible(true);
-            paint();
-        }
-
-        void paint() {
-
         }
     }
 

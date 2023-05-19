@@ -5,7 +5,6 @@ import jason.environment.grid.GridWorldView;
 import java.awt.*;
 
 public class ParkplaceView extends GridWorldView {
-    ParkplaceModel model;
 
     public ParkplaceView(ParkplaceModel model) {
         super(model, "Domestic Robot", 700);
