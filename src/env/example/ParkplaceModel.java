@@ -23,5 +23,6 @@ public class ParkplaceModel extends GridWorldModel {
 
     public void newParkPlace(int x, int y) {
         add(PARK_PLACE, new Location(x, y));
+        view.repaint();
     }
 }

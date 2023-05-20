@@ -10,7 +10,6 @@ public class ParkplaceView extends GridWorldView {
         super(model, "Domestic Robot", 700);
         defaultFont = new Font("Arial", Font.BOLD, 16);
         setVisible(true);
-        repaint();
     }
 
     @Override
@@ -25,6 +24,5 @@ public class ParkplaceView extends GridWorldView {
                 drawString(g, x, y, defaultFont, "P");
             }
         }
-        repaint();
     }
 }
