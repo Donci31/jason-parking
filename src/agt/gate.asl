@@ -14,6 +14,7 @@ number_of_park_places(0).
    <- .print("All bids received for ", CAR, ": ", ALL_BIDS);
       .print("Valid bids received for ", CAR, ": ", VALID_BIDS);
       .print("Winner bid for ", CAR, ": ", WINNER_BID_VALUE, " from ", WINNER_BID_FROM);
+      parked(WINNER_BID_FROM);
       .send(WINNER_BID_FROM, tell, occupied);
       .send(CAR, tell, parked).
 

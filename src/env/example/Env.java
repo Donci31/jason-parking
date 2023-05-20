@@ -27,6 +27,8 @@ public class Env extends Environment {
 
         Random random = new Random();
 
+        int agents = 0;
+
         ParkingGUI() {
             super("Parking Garage");
             newCar1 = new JButton("New Car (exit at 1)");
@@ -36,7 +38,7 @@ public class Env extends Environment {
             newParkPlace.addActionListener(e -> {
                 try {
                     String agentName = getEnvironmentInfraTier().getRuntimeServices().createAgent(
-                            "park_place", // agent name
+                            "park_place_" + agents, // agent name
                             "park_place.asl", // AgentSpeak source
                             null, // default agent class
                             null, // default architecture class
@@ -47,7 +49,7 @@ public class Env extends Environment {
                     int x = random.nextInt(10);
                     int y = random.nextInt(10);
 
-                    model.newParkPlace(x, y);
+                    model.newParkPlace("park_place_" + agents++, x, y);
 
                     Literal belief = Literal.parseLiteral("distance_to_exit(1, " + (int) Math.sqrt(Math.pow((x), 2) + Math.pow((y), 2)) + ")");
                     Literal belief2 = Literal.parseLiteral("distance_to_exit(2, " + (int) Math.sqrt(Math.pow((10 - x), 2) + Math.pow((10 - y), 2)) + ")");
@@ -102,6 +104,15 @@ public class Env extends Environment {
             pack();
             setVisible(true);
         }
+    }
+
+    @Override
+    public boolean executeAction(String ag, Structure action) {
+        if (action.getFunctor().equals("parked")) {
+            String carId = action.getTerm(0).toString();
+            model.parkCar(carId);
+        }
+        return true;
     }
 
     @Override

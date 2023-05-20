@@ -21,7 +21,12 @@ public class ParkplaceView extends GridWorldView {
             }
             case ParkplaceModel.PARK_PLACE -> {
                 g.setColor(Color.black);
-                drawString(g, x, y, defaultFont, "P");
+                drawString(g, x, y, defaultFont, "Parking");
+            }
+
+            case ParkplaceModel.CAR -> {
+                g.setColor(Color.black);
+                drawString(g, x, y, defaultFont, "Car");
             }
         }
     }
