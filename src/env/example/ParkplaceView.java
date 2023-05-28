@@ -7,7 +7,7 @@ import java.awt.*;
 public class ParkplaceView extends GridWorldView {
 
     public ParkplaceView(ParkplaceModel model) {
-        super(model, "Domestic Robot", 700);
+        super(model, "Garage", 700);
         defaultFont = new Font("Arial", Font.BOLD, 16);
         setVisible(true);
     }

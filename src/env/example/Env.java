@@ -30,7 +30,7 @@ public class Env extends Environment {
         int agents = 0;
 
         ParkingGUI() {
-            super("Parking Garage");
+            super("Control panel");
             newCar1 = new JButton("New Car (exit at 1)");
             newCar2 = new JButton("New Car (exit at 2)");
             newParkPlace = new JButton("New Park Place");
